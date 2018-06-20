@@ -5,7 +5,7 @@ stages:
 - name: Precache
 - name: Lint
 - name: Build
-- name: Deploy
+- name: Deploy to FireBase
 cache:
   directories:
   - node_modules
@@ -19,8 +19,6 @@ jobs:
     install: npm install
   - stage: Lint
     script: npm run lint
-  - stage: Build
-    script: npm run build
   - stage: Deploy to FireBase
     script: npm run build
     deploy:
