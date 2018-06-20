@@ -9,6 +9,8 @@ stages:
 cache:
   directories:
   - node_modules
+before_install:
+  - npm install -g firebase-tools
 jobs:
   fast_finish: true
   include:
@@ -19,7 +21,11 @@ jobs:
     script: npm run lint
   - stage: Build
     script: npm run build
-env:
-  global:
-  - secure: fr0QeXWshysJBC+JtdBASqWty4iF/KM+aPVcf5YO3Dpw4Zn+O4dgc6NKCjlpjPt4wJVgoMJx/g0E1jbbzF3FkMgytm1u/wXdoUEKZhJrCK4mC6UeRoRVHJvDqGyOkX9Yfsmiupm5ZZIKO8bbpMLcgxLnYWtTqyyB8mpjxjHAsg/K4qHUL8brJgSN7uVGdRkzlkW4XXySZderiiozXXUXKeLnZSKLqZ5ASWd6bA4qYt6QYhNNumG8xlTrNw6ARjvSBCAVOp9g5umVRN53vYKRwndajQ1xWykF8KmDJM8j6AiUFKm+7UWPm/YLyM5GVbeUQzoyD9E1sEJTb4/pzdjfBpnD+iyD//hITPIUThHRuR7WHoo2CqvMMR7BnnZ41rh7cOHlFrwlN0KBSHCPqAU6WFztklvaMknJXtK0Sbf2NqAOEnteY6xrrdCLtyUbR37OqXupjuzpAYz3Qq/CbXxdBaeUX1NhN3FsQzfEJSzinViM2plyCG9TvXSngqOzyj0RZAJ2pMW0G7Bspupe7JiYT8W65hElO06QveiABVogDzpcjzGc3MZs6y6kEhZq9GHyzHyKnpv21/fRuNqGFY3KM9p/lADlUwo8tHSx4lKj+PmMuQqJnu/fWkiP5M+AZIP4DJmOPXjEyJ5XV81GJpmiMvnySJNojCnhYNj5xpQZOXg=
-  - secure: NHyEChhHKf6NQQppatzjJ+nNVNHTnIujpM9ylC26tNsxiAvYwgdPyfXwKrzo0cmEbyx7Gv/F2oD7oUe0H6Qh9ozQSJ6l2KA2HL2S3mi0NyYRMRPFv47Io7c88yPL44f7feKPi7DcSg3K81PzKUC3R8XVO/OyFJ4Veehlx7BStlltOC3ypoMMNki0NNToeb1+xr9Vl7SGQkAqXgaUIHmn2ApCzH4KFeq4pTzB39gOFO7bB0/htCYUC/lbOq9LY9G5LNCQHAVzlCRK+ebdcQtnRbe8MWoYXWYCuXiBDzXTP9HIEG+Dyz9jkfHPu6lmEDFrsgiD1GfxAlbEKdO7ODbpfoerL+uIF3WEBgI3qQFlf186AhkO2mS8fXI/R7oVcab4dv2i/zZaW2i3voAuc40xwAVrDJBKKqR8ic+hrHDHhXFQMXmRouuvDHJHDRAqDEDzuJ/A4sXpsPLV6QiXhkLkN9qjP0V9fFLrRFXUwyo8RGX83tPzNevq4lZFLGZmT3HQ/EUwKcGdErQvu9kq9vCxV8UR2CE50GYanjzrSTe3oGvW/kMQ3qE9n0mf8cTeyXNetpQy45YcVoDJKH6ujBz/qMKP+NLFcxTU1UsgORPntPmmwMMzU8IeT2p8hoOvWZdC42qdjaaQbLy7nQhYhduL1MMXNfLro6kkqLzsa/Gs+2c=
+  - stage: Deploy to FireBase
+    script: npm run build
+    deploy:
+       provider: firebase
+       token:
+       secure: NHyEChhHKf6NQQppatzjJ+nNVNHTnIujpM9ylC26tNsxiAvYwgdPyfXwKrzo0cmEbyx7Gv/F2oD7oUe0H6Qh9ozQSJ6l2KA2HL2S3mi0NyYRMRPFv47Io7c88yPL44f7feKPi7DcSg3K81PzKUC3R8XVO/OyFJ4Veehlx7BStlltOC3ypoMMNki0NNToeb1+xr9Vl7SGQkAqXgaUIHmn2ApCzH4KFeq4pTzB39gOFO7bB0/htCYUC/lbOq9LY9G5LNCQHAVzlCRK+ebdcQtnRbe8MWoYXWYCuXiBDzXTP9HIEG+Dyz9jkfHPu6lmEDFrsgiD1GfxAlbEKdO7ODbpfoerL+uIF3WEBgI3qQFlf186AhkO2mS8fXI/R7oVcab4dv2i/zZaW2i3voAuc40xwAVrDJBKKqR8ic+hrHDHhXFQMXmRouuvDHJHDRAqDEDzuJ/A4sXpsPLV6QiXhkLkN9qjP0V9fFLrRFXUwyo8RGX83tPzNevq4lZFLGZmT3HQ/EUwKcGdErQvu9kq9vCxV8UR2CE50GYanjzrSTe3oGvW/kMQ3qE9n0mf8cTeyXNetpQy45YcVoDJKH6ujBz/qMKP+NLFcxTU1UsgORPntPmmwMMzU8IeT2p8hoOvWZdC42qdjaaQbLy7nQhYhduL1MMXNfLro6kkqLzsa/Gs+2c=
+       project: maryna-test-app
+       on: development
