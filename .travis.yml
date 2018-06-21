@@ -22,8 +22,8 @@ jobs:
   - stage: Deploy to FireBase
     script: npm run build
     deploy:
-       provider: firebase
-       token:
-       secure: NHyEChhHKf6NQQppatzjJ+nNVNHTnIujpM9ylC26tNsxiAvYwgdPyfXwKrzo0cmEbyx7Gv/F2oD7oUe0H6Qh9ozQSJ6l2KA2HL2S3mi0NyYRMRPFv47Io7c88yPL44f7feKPi7DcSg3K81PzKUC3R8XVO/OyFJ4Veehlx7BStlltOC3ypoMMNki0NNToeb1+xr9Vl7SGQkAqXgaUIHmn2ApCzH4KFeq4pTzB39gOFO7bB0/htCYUC/lbOq9LY9G5LNCQHAVzlCRK+ebdcQtnRbe8MWoYXWYCuXiBDzXTP9HIEG+Dyz9jkfHPu6lmEDFrsgiD1GfxAlbEKdO7ODbpfoerL+uIF3WEBgI3qQFlf186AhkO2mS8fXI/R7oVcab4dv2i/zZaW2i3voAuc40xwAVrDJBKKqR8ic+hrHDHhXFQMXmRouuvDHJHDRAqDEDzuJ/A4sXpsPLV6QiXhkLkN9qjP0V9fFLrRFXUwyo8RGX83tPzNevq4lZFLGZmT3HQ/EUwKcGdErQvu9kq9vCxV8UR2CE50GYanjzrSTe3oGvW/kMQ3qE9n0mf8cTeyXNetpQy45YcVoDJKH6ujBz/qMKP+NLFcxTU1UsgORPntPmmwMMzU8IeT2p8hoOvWZdC42qdjaaQbLy7nQhYhduL1MMXNfLro6kkqLzsa/Gs+2c=
-       project: maryna-test-app
-       on: development
+      provider: firebase
+      token:
+         secure: NHyEChhHKf6NQQppatzjJ+nNVNHTnIujpM9ylC26tNsxiAvYwgdPyfXwKrzo0cmEbyx7Gv/F2oD7oUe0H6Qh9ozQSJ6l2KA2HL2S3mi0NyYRMRPFv47Io7c88yPL44f7feKPi7DcSg3K81PzKUC3R8XVO/OyFJ4Veehlx7BStlltOC3ypoMMNki0NNToeb1+xr9Vl7SGQkAqXgaUIHmn2ApCzH4KFeq4pTzB39gOFO7bB0/htCYUC/lbOq9LY9G5LNCQHAVzlCRK+ebdcQtnRbe8MWoYXWYCuXiBDzXTP9HIEG+Dyz9jkfHPu6lmEDFrsgiD1GfxAlbEKdO7ODbpfoerL+uIF3WEBgI3qQFlf186AhkO2mS8fXI/R7oVcab4dv2i/zZaW2i3voAuc40xwAVrDJBKKqR8ic+hrHDHhXFQMXmRouuvDHJHDRAqDEDzuJ/A4sXpsPLV6QiXhkLkN9qjP0V9fFLrRFXUwyo8RGX83tPzNevq4lZFLGZmT3HQ/EUwKcGdErQvu9kq9vCxV8UR2CE50GYanjzrSTe3oGvW/kMQ3qE9n0mf8cTeyXNetpQy45YcVoDJKH6ujBz/qMKP+NLFcxTU1UsgORPntPmmwMMzU8IeT2p8hoOvWZdC42qdjaaQbLy7nQhYhduL1MMXNfLro6kkqLzsa/Gs+2c=
+      project: maryna-test-app
+      on: development
