@@ -20,7 +20,7 @@ jobs:
   - stage: Lint
     script: npm run lint
   - stage: Build
-    script: nmp run build
+    script: npm run build
   - stage: Deploy to FireBase
     script: npm run build
     deploy:
